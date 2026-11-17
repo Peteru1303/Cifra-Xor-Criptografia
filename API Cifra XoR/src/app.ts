@@ -43,7 +43,7 @@ function criptografar(req: Request, res: Response): void {
         console.log(textoCifrado)
     }
     
-    res.status(200).json(textoCifrado)
+    res.status(200).json({textoCifrado:textoCifrado})
 }
 
 
@@ -80,7 +80,7 @@ function descriptografar(req: Request, res: Response): void {
         textoClaro = textoClaro + (String.fromCharCode(resultado[i])); //transforma de unicode para string, não pode aplicar na resposta ou merge tudo.
     }
 
-    res.status(200).json(textoClaro)
+    res.status(200).json({textoClaro:textoClaro})
 }
 
 app.post('/cifrar', criptografar);
